@@ -26,6 +26,10 @@ public class UserRegistration {
 		System.out.println("Enter Your Mobile Number");
 		String mobileNo = scanner.next();
 		userregistration.validMobileFormat(mobileNo);
+		
+		System.out.println("\nEnter Password");
+        String password = scanner.next();
+        userregistration.validPassword(password);
 	}
 	
 	public void validFirstName(String firstName) {
@@ -71,6 +75,17 @@ public class UserRegistration {
     		System.out.println("Mobile Number  is Valid");
     		}else {
     			System.out.println("Mobile Number is Invalid");
+    			}
+    	}
+    
+    public void validPassword(String password) {
+    	
+    	String pattern = "[a-zA-z]{8,32}$";
+    	
+    	if(Pattern.matches(pattern, password)) {
+    		System.out.println("Password  is Valid");
+    		}else {
+    			System.out.println("Password is Invalid");
     			}
     	}
 }
