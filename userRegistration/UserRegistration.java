@@ -80,7 +80,7 @@ public class UserRegistration {
     
     public void validPassword(String password) {
     	
-    	String pattern = "(?=.*[A-Z])[a-zA-Z]{8,32}$";
+    	String pattern = "(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,32}$";
     	
     	if(Pattern.matches(pattern, password)) {
     		System.out.println("Password  is Valid");
