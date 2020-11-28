@@ -30,6 +30,10 @@ public class UserRegistration {
 		System.out.println("\nEnter Password");
         String password = scanner.next();
         userregistration.validPassword(password);
+        
+        System.out.println("Enter Email ID");
+        String email = scanner.next();
+        userregistration.validSampleEmail(email);
 	}
 	
 	public void validFirstName(String firstName) {
@@ -88,4 +92,15 @@ public class UserRegistration {
     			System.out.println("Password is Invalid");
     			}
     	}
+    
+    public void validSampleEmail(String email) {
+    	
+    	String pattern = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
+
+        if(Pattern.matches(pattern, email)) {
+            System.out.println("Email ID Valid");
+        }else {
+            System.out.println("Email ID Invalid");
+        }
+    }
 }
