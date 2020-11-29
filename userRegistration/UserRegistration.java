@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 	
 	public static void main(String[] args) {
+		
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("Welcome to User Registration");
@@ -18,24 +19,24 @@ public class UserRegistration {
 		System.out.println("Enter Your Last Name");
 		String lastName = scanner.next();
 		userregistration.validLastName(lastName);
-		
+	
 		System.out.println("Enter Your Email ID");
 		String emailID = scanner.next();
 		userregistration.validEmail( emailID);
-		
+	
 		System.out.println("Enter Your Mobile Number");
 		String mobileNo = scanner.next();
 		userregistration.validMobileFormat(mobileNo);
-		
-		System.out.println("\nEnter Password");
-        String password = scanner.next();
-        userregistration.validPassword(password);
-        
-        System.out.println("Enter Email ID");
-        String email = scanner.next();
-        userregistration.validSampleEmail(email);
-	}
 	
+		System.out.println("\nEnter Password");
+	    String password = scanner.next();
+	    userregistration.validPassword(password);
+    
+	    System.out.println("Enter Email ID");
+	    String email = scanner.next();
+	    userregistration.validSampleEmail(email);
+	}
+
 	public void validFirstName(String firstName) {
 		
 		String pattern ="^[A-Z]{1}[ a-z]{2,25}$";
@@ -46,7 +47,7 @@ public class UserRegistration {
 				System.out.println("First name is Invalid");
 				}
 		}
-	
+
 	public void validLastName(String lastName) {
 		
 		String pattern = "^[A-Z]{1}[ a-z]{2,25}$";
@@ -57,7 +58,7 @@ public class UserRegistration {
 				System.out.println("Last name is Invalid");
 				}
 		}
-	
+
 	//abc.xyz@bl.co.in
 	public void validEmail(String emailID) {
 		
@@ -69,38 +70,38 @@ public class UserRegistration {
 				System.out.println("Email ID is Invalid");
 				}
 		}
-	
-	//91 9919819801
-    public void validMobileFormat(String mobileNo) {
-    	
-    	String pattern = "((91){1})[ ]([98765]{1})([0-9]{9})$";
-        
-    	if(Pattern.matches(pattern, mobileNo)) {
-    		System.out.println("Mobile Number  is Valid");
-    		}else {
-    			System.out.println("Mobile Number is Invalid");
-    			}
-    	}
-    
-    public void validPassword(String password) {
-    	
-    	String pattern = "(?=.*[A-Z])(?=.*[0-9])(?=.*[!?#$]{1})[a-zA-Z0-9!?#$]{8,32}$";
-    	
-    	if(Pattern.matches(pattern, password)) {
-    		System.out.println("Password  is Valid");
-    		}else {
-    			System.out.println("Password is Invalid");
-    			}
-    	}
-    
-    public void validSampleEmail(String email) {
-    	
-    	String pattern = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
 
-        if(Pattern.matches(pattern, email)) {
-            System.out.println("Email ID Valid");
-        }else {
-            System.out.println("Email ID Invalid");
-        }
-    }
-}
+	//91 9919819801
+	public void validMobileFormat(String mobileNo) {
+		
+		String pattern = "((91){1})[ ]([98765]{1})([0-9]{9})$";
+	    
+		if(Pattern.matches(pattern, mobileNo)) {
+			System.out.println("Mobile Number  is Valid");
+			}else {
+				System.out.println("Mobile Number is Invalid");
+				}
+		}
+
+	public void validPassword(String password) {
+		
+		String pattern = "(?=.*[A-Z])(?=.*[0-9])(?=.*[!?#$]{1})[a-zA-Z0-9!?#$]{8,32}$";
+		
+		if(Pattern.matches(pattern, password)) {
+			System.out.println("Password  is Valid");
+			}else {
+				System.out.println("Password is Invalid");
+				}
+		}
+
+	public void validSampleEmail(String email) {
+		
+		String pattern = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
+	
+	    if(Pattern.matches(pattern, email)) {
+	        System.out.println("Email ID Valid");
+	    }else {
+	        System.out.println("Email ID Invalid");
+	        }
+	    }
+	}
